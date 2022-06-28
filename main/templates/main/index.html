@@ -1,0 +1,16 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <form action="" method="get">
+        <input type="text" name="q" value="{{ q }}">
+        <button type="submit">Qidirish</button>
+    </form>
+        {% for i in object_list %}
+    <div>
+        <h3>{{ i.name }}</h3>
+        <span>{{ i.price }}</span>
+        <a href="{% url 'update' i.id %}">Update</a>
+    </div>
+    {% endfor %}
+    <a href="{% url 'create' %}">Create</a>
+{% endblock %}
