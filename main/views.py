@@ -30,7 +30,6 @@ class CreatebookView(CreateView):
     model = BookModel
     template_name = 'main/form.html'
     fields = ['name', 'price']
-    form_class = CreateBookForm
 
 
 class UpdateBook(UpdateView):
@@ -38,3 +37,7 @@ class UpdateBook(UpdateView):
     template_name = 'main/update.html'
     fields = ['name', 'price']
     success_url = '/'
+
+class BookDetailView(DetailView):
+    model = BookModel
+    template_name = 'main/detail.html'
